@@ -1,0 +1,46 @@
+{
+  "name": "bicep-markdown",
+  "version": "0.0.1",
+  "description": "Tool to generate markdown for a Bicep file.",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-c-martin/bicep-markdown.git"
+  },
+  "keywords": [
+    "bicep"
+  ],
+  "author": "Anthony Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anthony-c-martin/bicep-markdown/issues"
+  },
+  "homepage": "https://github.com/anthony-c-martin/bicep-markdown#readme",
+  "devDependencies": {
+    "@types/jest": "29.5.11",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-jest": "27.6.3",
+    "jest": "29.7.0",
+    "prettier": "3.2.4",
+    "ts-jest": "29.1.1",
+    "typescript": "5.3.3"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "bicep-node": "file:../bicep-node"
+  },
+  "bin": {
+    "bicep-markdown": "dist/main.js"
+  }
+}
