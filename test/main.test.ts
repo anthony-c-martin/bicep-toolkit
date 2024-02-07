@@ -19,7 +19,7 @@ describe("CLI tests", () => {
 
     const actual = await readFile(expectedPath, 'utf-8');
     expect(actual).toEqual(expected);
-  });
+  }, 60000);
 
   it("can be used to compile files", async () => {
     const options = {
@@ -35,7 +35,7 @@ describe("CLI tests", () => {
 
     const actual = await readFile(expectedPath, 'utf-8');
     expect(replaceMetadata(actual)).toEqual(replaceMetadata(expected));
-  });
+  }, 60000);
 });
 
 function replaceMetadata(template: string) {

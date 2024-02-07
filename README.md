@@ -1,35 +1,45 @@
-# bicep-markdown
-Tool to generate markdown documentation for a Bicep file.
+# bicep-toolkit
+[![npm version](https://badge.fury.io/js/bicep-toolkit.svg)](https://badge.fury.io/js/bicep-toolkit)
 
-[![npm version](https://badge.fury.io/js/bicep-markdown.svg)](https://badge.fury.io/js/bicep-markdown)
-
-## Example
-See [here](test/files/sample.md) for an example of the documentation it generates.
+Multi-purpose toolkit for working with Bicep files, supporting the following functionality:
+* [Markdown documentation generation](#markdown-generation)
+* [Batch compilation](#compiling)
 
 ## Usage
-### Without installing
+This tool can either be run standalone using `npx`, or installed as a global tool.
+
+Usage via `npx`:
+```sh
+npx bicep-toolkit --help
+```
+
+Installation as a global tool:
+```sh
+npm install -g bicep-toolkit
+```
+
+Usage as a global tool:
+```sh
+bicep-toolkit --help
+```
+
+## Markdown Generation
 The following will generate a `.md` file in the same directory as the bicep file:
 ```sh
-npx bicep-markdown --bicep-file <path_to_bicep>
+bicep-toolkit markdown --bicep-file <path_to_bicep>
 ```
 
-### Install as a global tool
-#### Installation
+## Building
+The following will build one or more `.bicep` files:
 ```sh
-npm install -g bicep-markdown
+bicep-toolkit build --bicep-file <path_to_bicep>
 ```
 
-#### Usage
-The following will generate a `.md` file in the same directory as the bicep file:
-```sh
-bicep-markdown --bicep-file <path_to_bicep>
-```
-
-### Help
+## Help
 To view command line options, run:
 ```sh
-bicep-markdown --help
+bicep-toolkit --help
 ```
 
 ## Customizing
-Currently there are no options to tweak the format of the output. However I'm very happy to take feature requests or contributions for this!
+Currently there are no options to tweak the format of the markdown output. However I'm very happy to take feature requests or contributions for this!
