@@ -21,6 +21,8 @@ jobs:
 
       - run: npm run build
 
+      - run: npm run package
+
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}

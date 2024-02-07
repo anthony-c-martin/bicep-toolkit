@@ -23,11 +23,11 @@ jobs:
       with:
         node-version: 18
 
-    - name: npm ci
-      run: npm ci
+    - run: npm ci
 
-    - name: npm run build
-      run: npm run build
+    - run: npm run build
+
+    - run: npm run package
 
     - name: Run tests
       run: npm test
