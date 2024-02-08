@@ -1,21 +1,16 @@
-#!/usr/bin/env node
-
-import { Bicep, GetDeploymentGraphResponse, GetMetadataResponse, SymbolDefinition, Range } from 'bicep-node';
-import os from 'os';
 import path from 'path';
 import { writeFile } from 'fs/promises';
 import { glob } from 'glob';
+import { executeWithBicep } from './utils';
+import { GetDeploymentGraphResponse, GetMetadataResponse, Range, SymbolDefinition } from 'bicep-node';
 
 export async function markdownCommand(args: {
   bicepBinary: string | undefined,
   bicepFiles: string
 }) {
-  const bicepFiles = await glob(args.bicepFiles);
+  await executeWithBicep(args.bicepBinary, async (bicep) => {
+    const bicepFiles = await glob(args.bicepFiles);
 
-  const bicepPath = args.bicepBinary || await Bicep.install(os.tmpdir());
-  const bicep = await Bicep.initialize(bicepPath);
-
-  try {
     for (const bicepFile of bicepFiles.map(x => path.resolve(x))) {
       console.log(`Generating markdown for ${bicepFile}`);
 
@@ -27,9 +22,7 @@ export async function markdownCommand(args: {
   
       await writeFile(mdFile, markdown, 'utf-8');
     }
-  } finally {
-    bicep.dispose();
-  }
+  });
 }
 
 function formatMarkdown(metadata: GetMetadataResponse, graph: GetDeploymentGraphResponse, fileName: string) {

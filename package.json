@@ -1,6 +1,6 @@
 {
   "name": "bicep-toolkit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Multi-purpose toolkit for working with Bicep files.",
   "main": "dist/index.js",
   "scripts": {
