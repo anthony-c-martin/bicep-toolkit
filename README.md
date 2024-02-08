@@ -26,13 +26,13 @@ bicep-toolkit --help
 ## Markdown Generation
 The following will generate a `.md` file in the same directory as the bicep file:
 ```sh
-bicep-toolkit markdown --bicep-file <path_to_bicep>
+bicep-toolkit markdown --bicep-files <path_to_bicep>
 ```
 
 ## Building
 The following will build one or more `.bicep` files:
 ```sh
-bicep-toolkit build --bicep-file <path_to_bicep>
+bicep-toolkit build --bicep-files <path_to_bicep>
 ```
 
 ## Help
