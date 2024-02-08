@@ -1,21 +1,15 @@
-#!/usr/bin/env node
-
-import { Bicep } from 'bicep-node';
-import os from 'os';
 import path from 'path';
 import { writeFile } from 'fs/promises';
 import { glob } from 'glob';
+import { executeWithBicep } from './utils';
 
 export async function buildCommand(args: {
   bicepBinary: string | undefined,
   bicepFiles: string
 }) {
-  const bicepFiles = await glob(args.bicepFiles);
+  await executeWithBicep(args.bicepBinary, async (bicep) => {
+    const bicepFiles = await glob(args.bicepFiles);
 
-  const bicepPath = args.bicepBinary || await Bicep.install(os.tmpdir());
-  const bicep = await Bicep.initialize(bicepPath);
-
-  try {
     for (const bicepFile of bicepFiles.map(x => path.resolve(x))) {
       console.log(`Building ${bicepFile}`);
       
@@ -37,7 +31,5 @@ export async function buildCommand(args: {
         }
       }
     }
-  } finally {
-    bicep.dispose();
-  }
+  });
 }
