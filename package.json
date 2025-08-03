@@ -40,7 +40,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "bicep-node": "0.0.8",
+    "bicep-node": "0.0.9",
     "glob": "^11.0.0"
   },
   "bin": {
