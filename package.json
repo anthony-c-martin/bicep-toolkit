@@ -41,7 +41,7 @@
   ],
   "dependencies": {
     "bicep-node": "0.0.9",
-    "glob": "^11.0.0"
+    "glob": "^13.0.0"
   },
   "bin": {
     "bicep-toolkit": "dist/index.js"
