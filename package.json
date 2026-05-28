@@ -40,7 +40,7 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "bicep-node": "0.0.12",
+    "@azure/bicep-rpc-client": "^0.2.1",
     "glob": "^13.0.0"
   },
   "bin": {

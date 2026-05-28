@@ -2,7 +2,7 @@ import path from 'path';
 import { writeFile } from 'fs/promises';
 import { glob } from 'glob';
 import { executeWithBicep } from './utils';
-import { GetDeploymentGraphResponse, GetMetadataResponse, Range, SymbolDefinition } from 'bicep-node';
+import { GetDeploymentGraphResponse, GetMetadataResponse, Range, SymbolDefinition } from '@azure/bicep-rpc-client';
 
 export async function markdownCommand(args: {
   bicepBinary: string | undefined,

@@ -1,7 +1,7 @@
 import os from "os";
 import path from "path";
 import { mkdtemp } from "fs/promises";
-import { Bicep } from "bicep-node";
+import { Bicep } from "@azure/bicep-rpc-client";
 
 export async function executeWithBicep<T>(bicepPath: string | undefined, action: (bicep: Bicep) => Promise<T>) {
   if (!bicepPath) {
