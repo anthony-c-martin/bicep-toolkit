@@ -34,13 +34,13 @@
     "prettier": "3.9.10",
     "ts-jest": "29.4.15",
     "ts-node": "^10.9.2",
-    "typescript": "7.0.2"
+    "typescript": "5.9.3"
   },
   "files": [
     "dist/**/*"
   ],
   "dependencies": {
-    "@azure/bicep-rpc-client": "^0.2.1",
+    "@azure/bicep-rpc-client": "^0.4.1",
     "glob": "^13.0.0"
   },
   "bin": {
